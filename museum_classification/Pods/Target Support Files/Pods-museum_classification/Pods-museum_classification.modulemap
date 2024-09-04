@@ -1,0 +1,6 @@
+framework module Pods_museum_classification {
+  umbrella header "Pods-museum_classification-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_museum_classification_museum_classificationUITests : NSObject
+@end
+@implementation PodsDummy_Pods_museum_classification_museum_classificationUITests
+@end

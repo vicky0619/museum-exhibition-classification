@@ -1,0 +1,730 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B23E29A8AD6262DB306E078 /* Pods_museum_classification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4BFD1D14C4ECB7712FD4EA6 /* Pods_museum_classification.framework */; };
+		3E786C31103514397F180490 /* Pods_museum_classification_museum_classificationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174526DB08C477207B5D13AF /* Pods_museum_classification_museum_classificationUITests.framework */; };
+		46CA8308935948A7E16FE38A /* Pods_museum_classificationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15FBF2B48AF4BF608C7ABB27 /* Pods_museum_classificationTests.framework */; };
+		BEC7B1EB2C83790800A8F9DD /* museum_classificationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7B1EA2C83790800A8F9DD /* museum_classificationApp.swift */; };
+		BEC7B1ED2C83790800A8F9DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7B1EC2C83790800A8F9DD /* ContentView.swift */; };
+		BEC7B1EF2C83790900A8F9DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEC7B1EE2C83790900A8F9DD /* Assets.xcassets */; };
+		BEC7B1F22C83790900A8F9DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEC7B1F12C83790900A8F9DD /* Preview Assets.xcassets */; };
+		BEC7B1FC2C83790900A8F9DD /* museum_classificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7B1FB2C83790900A8F9DD /* museum_classificationTests.swift */; };
+		BEC7B2062C83790900A8F9DD /* museum_classificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7B2052C83790900A8F9DD /* museum_classificationUITests.swift */; };
+		BEC7B2082C83790900A8F9DD /* museum_classificationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7B2072C83790900A8F9DD /* museum_classificationUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEC7B1F82C83790900A8F9DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEC7B1DF2C83790800A8F9DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEC7B1E62C83790800A8F9DD;
+			remoteInfo = museum_classification;
+		};
+		BEC7B2022C83790900A8F9DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEC7B1DF2C83790800A8F9DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEC7B1E62C83790800A8F9DD;
+			remoteInfo = museum_classification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07AFD47D03EF0A3D0BEF43F4 /* Pods-museum_classification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification.debug.xcconfig"; path = "Target Support Files/Pods-museum_classification/Pods-museum_classification.debug.xcconfig"; sourceTree = "<group>"; };
+		15FBF2B48AF4BF608C7ABB27 /* Pods_museum_classificationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_museum_classificationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		174526DB08C477207B5D13AF /* Pods_museum_classification_museum_classificationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_museum_classification_museum_classificationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		461243A702D7DE956A4CA1C3 /* Pods-museum_classificationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classificationTests.release.xcconfig"; path = "Target Support Files/Pods-museum_classificationTests/Pods-museum_classificationTests.release.xcconfig"; sourceTree = "<group>"; };
+		65DF762F2D28C7847C8F2932 /* Pods-museum_classification-museum_classificationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification-museum_classificationUITests.release.xcconfig"; path = "Target Support Files/Pods-museum_classification-museum_classificationUITests/Pods-museum_classification-museum_classificationUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A2B0866EC3359003647CB604 /* Pods-museum_classification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification.release.xcconfig"; path = "Target Support Files/Pods-museum_classification/Pods-museum_classification.release.xcconfig"; sourceTree = "<group>"; };
+		A4BFD1D14C4ECB7712FD4EA6 /* Pods_museum_classification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_museum_classification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEC7B1E72C83790800A8F9DD /* museum_classification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = museum_classification.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEC7B1EA2C83790800A8F9DD /* museum_classificationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museum_classificationApp.swift; sourceTree = "<group>"; };
+		BEC7B1EC2C83790800A8F9DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BEC7B1EE2C83790900A8F9DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BEC7B1F12C83790900A8F9DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BEC7B1F72C83790900A8F9DD /* museum_classificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = museum_classificationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEC7B1FB2C83790900A8F9DD /* museum_classificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museum_classificationTests.swift; sourceTree = "<group>"; };
+		BEC7B2012C83790900A8F9DD /* museum_classificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = museum_classificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEC7B2052C83790900A8F9DD /* museum_classificationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museum_classificationUITests.swift; sourceTree = "<group>"; };
+		BEC7B2072C83790900A8F9DD /* museum_classificationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museum_classificationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BF46736F3E0B0A15FEB959CA /* Pods-museum_classificationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classificationTests.debug.xcconfig"; path = "Target Support Files/Pods-museum_classificationTests/Pods-museum_classificationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C7DB5B1C66DBDE5429955CE4 /* Pods-museum_classification-museum_classificationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification-museum_classificationUITests.debug.xcconfig"; path = "Target Support Files/Pods-museum_classification-museum_classificationUITests/Pods-museum_classification-museum_classificationUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEC7B1E42C83790800A8F9DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B23E29A8AD6262DB306E078 /* Pods_museum_classification.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC7B1F42C83790900A8F9DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46CA8308935948A7E16FE38A /* Pods_museum_classificationTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC7B1FE2C83790900A8F9DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E786C31103514397F180490 /* Pods_museum_classification_museum_classificationUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EBC0F614D27B5DD77145174 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4BFD1D14C4ECB7712FD4EA6 /* Pods_museum_classification.framework */,
+				174526DB08C477207B5D13AF /* Pods_museum_classification_museum_classificationUITests.framework */,
+				15FBF2B48AF4BF608C7ABB27 /* Pods_museum_classificationTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87EE5CB3620D25C0B7040950 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				07AFD47D03EF0A3D0BEF43F4 /* Pods-museum_classification.debug.xcconfig */,
+				A2B0866EC3359003647CB604 /* Pods-museum_classification.release.xcconfig */,
+				C7DB5B1C66DBDE5429955CE4 /* Pods-museum_classification-museum_classificationUITests.debug.xcconfig */,
+				65DF762F2D28C7847C8F2932 /* Pods-museum_classification-museum_classificationUITests.release.xcconfig */,
+				BF46736F3E0B0A15FEB959CA /* Pods-museum_classificationTests.debug.xcconfig */,
+				461243A702D7DE956A4CA1C3 /* Pods-museum_classificationTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BEC7B1DE2C83790800A8F9DD = {
+			isa = PBXGroup;
+			children = (
+				BEC7B1E92C83790800A8F9DD /* museum_classification */,
+				BEC7B1FA2C83790900A8F9DD /* museum_classificationTests */,
+				BEC7B2042C83790900A8F9DD /* museum_classificationUITests */,
+				BEC7B1E82C83790800A8F9DD /* Products */,
+				87EE5CB3620D25C0B7040950 /* Pods */,
+				3EBC0F614D27B5DD77145174 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BEC7B1E82C83790800A8F9DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7B1E72C83790800A8F9DD /* museum_classification.app */,
+				BEC7B1F72C83790900A8F9DD /* museum_classificationTests.xctest */,
+				BEC7B2012C83790900A8F9DD /* museum_classificationUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEC7B1E92C83790800A8F9DD /* museum_classification */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7B1EA2C83790800A8F9DD /* museum_classificationApp.swift */,
+				BEC7B1EC2C83790800A8F9DD /* ContentView.swift */,
+				BEC7B1EE2C83790900A8F9DD /* Assets.xcassets */,
+				BEC7B1F02C83790900A8F9DD /* Preview Content */,
+			);
+			path = museum_classification;
+			sourceTree = "<group>";
+		};
+		BEC7B1F02C83790900A8F9DD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7B1F12C83790900A8F9DD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BEC7B1FA2C83790900A8F9DD /* museum_classificationTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7B1FB2C83790900A8F9DD /* museum_classificationTests.swift */,
+			);
+			path = museum_classificationTests;
+			sourceTree = "<group>";
+		};
+		BEC7B2042C83790900A8F9DD /* museum_classificationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BEC7B2052C83790900A8F9DD /* museum_classificationUITests.swift */,
+				BEC7B2072C83790900A8F9DD /* museum_classificationUITestsLaunchTests.swift */,
+			);
+			path = museum_classificationUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEC7B1E62C83790800A8F9DD /* museum_classification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEC7B20B2C83790900A8F9DD /* Build configuration list for PBXNativeTarget "museum_classification" */;
+			buildPhases = (
+				F4CAC8C84182E17CEBB49A7D /* [CP] Check Pods Manifest.lock */,
+				BEC7B1E32C83790800A8F9DD /* Sources */,
+				BEC7B1E42C83790800A8F9DD /* Frameworks */,
+				BEC7B1E52C83790800A8F9DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = museum_classification;
+			productName = museum_classification;
+			productReference = BEC7B1E72C83790800A8F9DD /* museum_classification.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BEC7B1F62C83790900A8F9DD /* museum_classificationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEC7B20E2C83790900A8F9DD /* Build configuration list for PBXNativeTarget "museum_classificationTests" */;
+			buildPhases = (
+				B4A82934703468C184122AAA /* [CP] Check Pods Manifest.lock */,
+				BEC7B1F32C83790900A8F9DD /* Sources */,
+				BEC7B1F42C83790900A8F9DD /* Frameworks */,
+				BEC7B1F52C83790900A8F9DD /* Resources */,
+				D5DC5306AC26949E58009800 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEC7B1F92C83790900A8F9DD /* PBXTargetDependency */,
+			);
+			name = museum_classificationTests;
+			productName = museum_classificationTests;
+			productReference = BEC7B1F72C83790900A8F9DD /* museum_classificationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BEC7B2002C83790900A8F9DD /* museum_classificationUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEC7B2112C83790900A8F9DD /* Build configuration list for PBXNativeTarget "museum_classificationUITests" */;
+			buildPhases = (
+				0EFACDE0B3A0D9FF09431345 /* [CP] Check Pods Manifest.lock */,
+				BEC7B1FD2C83790900A8F9DD /* Sources */,
+				BEC7B1FE2C83790900A8F9DD /* Frameworks */,
+				BEC7B1FF2C83790900A8F9DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEC7B2032C83790900A8F9DD /* PBXTargetDependency */,
+			);
+			name = museum_classificationUITests;
+			productName = museum_classificationUITests;
+			productReference = BEC7B2012C83790900A8F9DD /* museum_classificationUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEC7B1DF2C83790800A8F9DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					BEC7B1E62C83790800A8F9DD = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					BEC7B1F62C83790900A8F9DD = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = BEC7B1E62C83790800A8F9DD;
+					};
+					BEC7B2002C83790900A8F9DD = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = BEC7B1E62C83790800A8F9DD;
+					};
+				};
+			};
+			buildConfigurationList = BEC7B1E22C83790800A8F9DD /* Build configuration list for PBXProject "museum_classification" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BEC7B1DE2C83790800A8F9DD;
+			productRefGroup = BEC7B1E82C83790800A8F9DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEC7B1E62C83790800A8F9DD /* museum_classification */,
+				BEC7B1F62C83790900A8F9DD /* museum_classificationTests */,
+				BEC7B2002C83790900A8F9DD /* museum_classificationUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEC7B1E52C83790800A8F9DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEC7B1F22C83790900A8F9DD /* Preview Assets.xcassets in Resources */,
+				BEC7B1EF2C83790900A8F9DD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC7B1F52C83790900A8F9DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC7B1FF2C83790900A8F9DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0EFACDE0B3A0D9FF09431345 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-museum_classification-museum_classificationUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4A82934703468C184122AAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-museum_classificationTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5DC5306AC26949E58009800 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-museum_classificationTests/Pods-museum_classificationTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-museum_classificationTests/Pods-museum_classificationTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-museum_classificationTests/Pods-museum_classificationTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4CAC8C84182E17CEBB49A7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-museum_classification-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEC7B1E32C83790800A8F9DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEC7B1ED2C83790800A8F9DD /* ContentView.swift in Sources */,
+				BEC7B1EB2C83790800A8F9DD /* museum_classificationApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC7B1F32C83790900A8F9DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEC7B1FC2C83790900A8F9DD /* museum_classificationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEC7B1FD2C83790900A8F9DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEC7B2082C83790900A8F9DD /* museum_classificationUITestsLaunchTests.swift in Sources */,
+				BEC7B2062C83790900A8F9DD /* museum_classificationUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEC7B1F92C83790900A8F9DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEC7B1E62C83790800A8F9DD /* museum_classification */;
+			targetProxy = BEC7B1F82C83790900A8F9DD /* PBXContainerItemProxy */;
+		};
+		BEC7B2032C83790900A8F9DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEC7B1E62C83790800A8F9DD /* museum_classification */;
+			targetProxy = BEC7B2022C83790900A8F9DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BEC7B2092C83790900A8F9DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BEC7B20A2C83790900A8F9DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEC7B20C2C83790900A8F9DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07AFD47D03EF0A3D0BEF43F4 /* Pods-museum_classification.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"museum_classification/Preview Content\"";
+				DEVELOPMENT_TEAM = 8WZ234LL8R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BEC7B20D2C83790900A8F9DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2B0866EC3359003647CB604 /* Pods-museum_classification.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"museum_classification/Preview Content\"";
+				DEVELOPMENT_TEAM = 8WZ234LL8R;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classification";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BEC7B20F2C83790900A8F9DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF46736F3E0B0A15FEB959CA /* Pods-museum_classificationTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8WZ234LL8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classificationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/museum_classification.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/museum_classification";
+			};
+			name = Debug;
+		};
+		BEC7B2102C83790900A8F9DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 461243A702D7DE956A4CA1C3 /* Pods-museum_classificationTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8WZ234LL8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classificationTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/museum_classification.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/museum_classification";
+			};
+			name = Release;
+		};
+		BEC7B2122C83790900A8F9DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7DB5B1C66DBDE5429955CE4 /* Pods-museum_classification-museum_classificationUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8WZ234LL8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classificationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = museum_classification;
+			};
+			name = Debug;
+		};
+		BEC7B2132C83790900A8F9DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65DF762F2D28C7847C8F2932 /* Pods-museum_classification-museum_classificationUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8WZ234LL8R;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classificationUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = museum_classification;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEC7B1E22C83790800A8F9DD /* Build configuration list for PBXProject "museum_classification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEC7B2092C83790900A8F9DD /* Debug */,
+				BEC7B20A2C83790900A8F9DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEC7B20B2C83790900A8F9DD /* Build configuration list for PBXNativeTarget "museum_classification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEC7B20C2C83790900A8F9DD /* Debug */,
+				BEC7B20D2C83790900A8F9DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEC7B20E2C83790900A8F9DD /* Build configuration list for PBXNativeTarget "museum_classificationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEC7B20F2C83790900A8F9DD /* Debug */,
+				BEC7B2102C83790900A8F9DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEC7B2112C83790900A8F9DD /* Build configuration list for PBXNativeTarget "museum_classificationUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEC7B2122C83790900A8F9DD /* Debug */,
+				BEC7B2132C83790900A8F9DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BEC7B1DF2C83790800A8F9DD /* Project object */;
+}
