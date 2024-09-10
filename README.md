@@ -4,4 +4,4 @@ For 2024 AIGO Copmpetition
 
 Competition Website: https://aigo.org.tw/zh-tw/competitions/details/507
 
-build TensorFlow Lite model on ios devices
+builds TensorFlow Lite model on ios devices
