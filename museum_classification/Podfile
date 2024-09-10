@@ -1,20 +1,35 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '17.0'
 
 target 'museum_classification' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for museum_classification
+  # Pods for museum_classification (主目標)
+  pod 'TensorFlowLiteTaskVision'
+  pod 'TensorFlowLiteSwift'
 
   target 'museum_classificationTests' do
     inherit! :search_paths
-    pod 'TensorFlowLiteSwift'
     # Pods for testing
   end
 
   target 'museum_classificationUITests' do
     # Pods for testing
   end
+end
 
+# 添加這個 post_install 鉤子來處理架構兼容性問題
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+      
+      # 這行確保在模擬器上構建時排除 arm64 架構
+      config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+
+      # 這行確保構建所有可用的架構，而不僅僅是活動的架構
+      config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+    end
+  end
 end

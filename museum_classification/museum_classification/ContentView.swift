@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = CameraViewModel()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            if let image = viewModel.capturedImage {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Text("No image captured")
+            }
+            
+            HStack {
+                Button("Open Camera") {
+                    viewModel.openCamera()
+                }
+                
+                Button("Process Photo") {
+                    viewModel.processPhoto()
+                }
+            }
         }
-        .padding()
+        .sheet(isPresented: $viewModel.isShowingCamera) {
+            ImagePicker(image: $viewModel.capturedImage, sourceType: .camera)
+        }
     }
-}
-
-#Preview {
-    ContentView()
 }
