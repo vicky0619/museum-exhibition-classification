@@ -1,10 +1,3 @@
-//
-//  ImagePicker.swift
-//  museum_classification
-//
-//  Created by Vicky T on 9/10/24.
-//
-
 import SwiftUI
 
 struct ImagePicker: UIViewControllerRepresentable {
@@ -24,7 +17,7 @@ struct ImagePicker: UIViewControllerRepresentable {
         Coordinator(self)
     }
 
-    class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let parent: ImagePicker
 
         init(_ parent: ImagePicker) {
@@ -32,9 +25,13 @@ struct ImagePicker: UIViewControllerRepresentable {
         }
 
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let image = info[.originalImage] as? UIImage {
-                parent.image = image
+            if let uiImage = info[.originalImage] as? UIImage {
+                parent.image = uiImage
             }
+            picker.dismiss(animated: true)
+        }
+
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             picker.dismiss(animated: true)
         }
     }

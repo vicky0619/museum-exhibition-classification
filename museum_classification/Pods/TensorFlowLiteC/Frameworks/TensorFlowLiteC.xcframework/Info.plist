@@ -36,5 +36,11 @@
 	<string>XFWK</string>
 	<key>XCFrameworkFormatVersion</key>
 	<string>1.0</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Museum classificaiton App needs access to the camera to take photos for classification.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Museum classificaiton App needs access to the photo library to store photos for classification.</string>
+	<key>NSCameraReactionEffectGesturesEnabledDefault</key>
+	<true/>
 </dict>
 </plist>

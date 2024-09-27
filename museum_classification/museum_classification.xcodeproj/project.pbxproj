@@ -9,9 +9,14 @@
 /* Begin PBXBuildFile section */
 		442F13E6E7E592B62C0B03F2 /* Pods_museum_classification_museum_classificationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D01A866D9E8348CBC8D19A6 /* Pods_museum_classification_museum_classificationUITests.framework */; };
 		AA57784418BD569B849FCA22 /* Pods_museum_classification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E6D195DC4C07078EC8437F /* Pods_museum_classification.framework */; };
+		BEC771842C9B41F900758AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771832C9B41F900758AB2 /* ViewController.swift */; };
+		BEC771852C9B41F900758AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771832C9B41F900758AB2 /* ViewController.swift */; };
+		BEC771862C9B41F900758AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771832C9B41F900758AB2 /* ViewController.swift */; };
+		BEC771882C9B420300758AB2 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771872C9B420300758AB2 /* CameraController.swift */; };
+		BEC771892C9B420300758AB2 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771872C9B420300758AB2 /* CameraController.swift */; };
+		BEC7718A2C9B420300758AB2 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771872C9B420300758AB2 /* CameraController.swift */; };
 		BEC7B1EB2C83790800A8F9DD /* museum_classificationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7B1EA2C83790800A8F9DD /* museum_classificationApp.swift */; };
 		BEC7B1ED2C83790800A8F9DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7B1EC2C83790800A8F9DD /* ContentView.swift */; };
-		BEC7B1EF2C83790900A8F9DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEC7B1EE2C83790900A8F9DD /* Assets.xcassets */; };
 		BEC7B1F22C83790900A8F9DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEC7B1F12C83790900A8F9DD /* Preview Assets.xcassets */; };
 		BEC7B1FC2C83790900A8F9DD /* museum_classificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7B1FB2C83790900A8F9DD /* museum_classificationTests.swift */; };
 		BEC7B2062C83790900A8F9DD /* museum_classificationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC7B2052C83790900A8F9DD /* museum_classificationUITests.swift */; };
@@ -25,6 +30,12 @@
 		BEDAD4022C90B1A000111A1A /* aigo_model_v1.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BEDAD4012C90B1A000111A1A /* aigo_model_v1.tflite */; };
 		BEDAD4032C90B1A000111A1A /* aigo_model_v1.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BEDAD4012C90B1A000111A1A /* aigo_model_v1.tflite */; };
 		BEDAD4042C90B1A000111A1A /* aigo_model_v1.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BEDAD4012C90B1A000111A1A /* aigo_model_v1.tflite */; };
+		BEDAD4122C91FBB800111A1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEDAD4112C91FBB800111A1A /* Assets.xcassets */; };
+		BEDAD4132C91FBB800111A1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEDAD4112C91FBB800111A1A /* Assets.xcassets */; };
+		BEDAD4142C91FBB800111A1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEDAD4112C91FBB800111A1A /* Assets.xcassets */; };
+		BEDAD4172C91FC0200111A1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDAD4152C91FC0200111A1A /* Main.storyboard */; };
+		BEDAD4182C91FC0200111A1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDAD4152C91FC0200111A1A /* Main.storyboard */; };
+		BEDAD4192C91FC0200111A1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEDAD4152C91FC0200111A1A /* Main.storyboard */; };
 		BFC3DB56A43C529A9ED94A39 /* Pods_museum_classificationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAF7F3964F29A2C3C2955C8 /* Pods_museum_classificationTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,10 +65,11 @@
 		8D2469CB056F4E594BA671C0 /* Pods-museum_classification-museum_classificationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification-museum_classificationUITests.release.xcconfig"; path = "Target Support Files/Pods-museum_classification-museum_classificationUITests/Pods-museum_classification-museum_classificationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B26AA08603DBF60576A69034 /* Pods-museum_classificationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classificationTests.debug.xcconfig"; path = "Target Support Files/Pods-museum_classificationTests/Pods-museum_classificationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE7038BC26E90AC60C992A25 /* Pods-museum_classification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification.release.xcconfig"; path = "Target Support Files/Pods-museum_classification/Pods-museum_classification.release.xcconfig"; sourceTree = "<group>"; };
+		BEC771832C9B41F900758AB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEC771872C9B420300758AB2 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		BEC7B1E72C83790800A8F9DD /* museum_classification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = museum_classification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC7B1EA2C83790800A8F9DD /* museum_classificationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museum_classificationApp.swift; sourceTree = "<group>"; };
 		BEC7B1EC2C83790800A8F9DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BEC7B1EE2C83790900A8F9DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEC7B1F12C83790900A8F9DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BEC7B1F72C83790900A8F9DD /* museum_classificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = museum_classificationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC7B1FB2C83790900A8F9DD /* museum_classificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = museum_classificationTests.swift; sourceTree = "<group>"; };
@@ -67,6 +79,8 @@
 		BEDAD3F42C8F66D700111A1A /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		BEDAD3F82C8F670000111A1A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		BEDAD4012C90B1A000111A1A /* aigo_model_v1.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = aigo_model_v1.tflite; sourceTree = "<group>"; };
+		BEDAD4112C91FBB800111A1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Desktop/xcode/CameraDemoStarter/AV Foundation/Assets.xcassets"; sourceTree = "<group>"; };
+		BEDAD4162C91FC0200111A1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../../Desktop/xcode/CameraDemoStarter/AV Foundation/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
 		C9F78988FE1AA52D0AEC72E2 /* Pods-museum_classification-museum_classificationUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification-museum_classificationUITests.debug.xcconfig"; path = "Target Support Files/Pods-museum_classification-museum_classificationUITests/Pods-museum_classification-museum_classificationUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,11 +151,14 @@
 		BEC7B1E92C83790800A8F9DD /* museum_classification */ = {
 			isa = PBXGroup;
 			children = (
+				BEC771872C9B420300758AB2 /* CameraController.swift */,
+				BEC771832C9B41F900758AB2 /* ViewController.swift */,
+				BEDAD4152C91FC0200111A1A /* Main.storyboard */,
+				BEDAD4112C91FBB800111A1A /* Assets.xcassets */,
 				BEC7B1EA2C83790800A8F9DD /* museum_classificationApp.swift */,
 				BEC7B1EC2C83790800A8F9DD /* ContentView.swift */,
 				BEDAD3F42C8F66D700111A1A /* CameraViewModel.swift */,
 				BEDAD3F82C8F670000111A1A /* ImagePicker.swift */,
-				BEC7B1EE2C83790900A8F9DD /* Assets.xcassets */,
 				BEC7B1F02C83790900A8F9DD /* Preview Content */,
 			);
 			path = museum_classification;
@@ -259,7 +276,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					BEC7B1E62C83790800A8F9DD = {
 						CreatedOnToolsVersion = 15.4;
@@ -301,7 +318,8 @@
 			files = (
 				BEDAD4022C90B1A000111A1A /* aigo_model_v1.tflite in Resources */,
 				BEC7B1F22C83790900A8F9DD /* Preview Assets.xcassets in Resources */,
-				BEC7B1EF2C83790900A8F9DD /* Assets.xcassets in Resources */,
+				BEDAD4122C91FBB800111A1A /* Assets.xcassets in Resources */,
+				BEDAD4172C91FC0200111A1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +327,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEDAD4182C91FC0200111A1A /* Main.storyboard in Resources */,
 				BEDAD4032C90B1A000111A1A /* aigo_model_v1.tflite in Resources */,
+				BEDAD4132C91FBB800111A1A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +337,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEDAD4192C91FC0200111A1A /* Main.storyboard in Resources */,
 				BEDAD4042C90B1A000111A1A /* aigo_model_v1.tflite in Resources */,
+				BEDAD4142C91FBB800111A1A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +453,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC771892C9B420300758AB2 /* CameraController.swift in Sources */,
+				BEC771862C9B41F900758AB2 /* ViewController.swift in Sources */,
 				BEC7B1ED2C83790800A8F9DD /* ContentView.swift in Sources */,
 				BEDAD3F92C8F670000111A1A /* ImagePicker.swift in Sources */,
 				BEC7B1EB2C83790800A8F9DD /* museum_classificationApp.swift in Sources */,
@@ -444,7 +468,9 @@
 			files = (
 				BEDAD3FA2C8F670000111A1A /* ImagePicker.swift in Sources */,
 				BEC7B1FC2C83790900A8F9DD /* museum_classificationTests.swift in Sources */,
+				BEC771842C9B41F900758AB2 /* ViewController.swift in Sources */,
 				BEDAD3F62C8F66D700111A1A /* CameraViewModel.swift in Sources */,
+				BEC7718A2C9B420300758AB2 /* CameraController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +478,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC771882C9B420300758AB2 /* CameraController.swift in Sources */,
+				BEC771852C9B41F900758AB2 /* ViewController.swift in Sources */,
 				BEC7B2082C83790900A8F9DD /* museum_classificationUITestsLaunchTests.swift in Sources */,
 				BEDAD3FB2C8F670000111A1A /* ImagePicker.swift in Sources */,
 				BEC7B2062C83790900A8F9DD /* museum_classificationUITests.swift in Sources */,
@@ -473,6 +501,17 @@
 			targetProxy = BEC7B2022C83790900A8F9DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BEDAD4152C91FC0200111A1A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEDAD4162C91FC0200111A1A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BEC7B2092C83790900A8F9DD /* Debug */ = {
@@ -527,6 +566,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(This app needs camera to take photos for classification.)";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(This app needs photo library to store results.)";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -584,6 +625,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(This app needs camera to take photos for classification.)";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(This app needs photo library to store results.)";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -658,12 +701,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B26AA08603DBF60576A69034 /* Pods-museum_classificationTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8WZ234LL8R;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera to take photo for classification.";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classificationTests";
@@ -679,12 +722,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D3E2F18D4457DCBF14E2ACD /* Pods-museum_classificationTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8WZ234LL8R;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera to take photo for classification.";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classificationTests";
@@ -700,11 +743,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9F78988FE1AA52D0AEC72E2 /* Pods-museum_classification-museum_classificationUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8WZ234LL8R;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(This app needs camera to take photos for classification.)";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(This app needs photo library to store results.)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classificationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -719,11 +763,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D2469CB056F4E594BA671C0 /* Pods-museum_classification-museum_classificationUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8WZ234LL8R;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(This app needs camera to take photos for classification.)";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(This app needs photo library to store results.)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "vicky.museum-classificationUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
