@@ -4,6 +4,7 @@
 
 ## 📖 Project Overview
 This project is a **Museum Object Classification** solution that uses **YOLO (You Only Look Once) object detection model** and an **anti-reflection model** to identify artifacts and artworks in museums and exhibition halls. It aims to enhance the accuracy of object recognition by removing reflections from images and then performing classification on the cleaned images.
+
 Competition Website: https://aigo.org.tw/zh-tw/competitions/details/507
 
 
