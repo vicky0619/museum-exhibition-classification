@@ -65,7 +65,6 @@ We welcome **Issues** and **Pull Requests**! Here's how you can contribute:
 ## 📧 Contact
 If you have any questions or suggestions about this project, feel free to reach out at: [vicky46586038@gmail.com](mailto:vicky46586038@gmail.com).
 
----
 
 ---
 
