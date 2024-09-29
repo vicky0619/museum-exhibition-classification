@@ -2,7 +2,7 @@ import SwiftUI
 import AVFoundation
 
 struct ContentView: View {
-    @StateObject private var viewModel = CameraViewModel()
+    @ObservedObject private var viewModel = CameraViewModel()
     
     var body: some View {
         VStack {
@@ -23,6 +23,13 @@ struct ContentView: View {
                 Text("尚未擷取圖像")
             }
             
+            // 顯示最終結果
+            if !viewModel.finalResult.isEmpty {
+                Text("最終結果：\(viewModel.finalResult)")
+                    .font(.headline)
+                    .padding()
+            }
+            
             // 操作按鈕
             HStack {
                 Button("打開相機") {
@@ -30,7 +37,7 @@ struct ContentView: View {
                 }
                 
                 Button("處理相片") {
-                    viewModel.processPhoto()
+                    viewModel.getFinalResult() // 使用新的方法來處理兩個模型並獲取最終結果
                 }
             }
             .padding()
@@ -50,6 +57,7 @@ struct ContentView: View {
         }
         .onAppear {
             viewModel.setupCamera() // 初始化相機
+            viewModel.loadModels() // 初始化模型
         }
         .sheet(isPresented: $viewModel.isShowingCamera) {
             ImagePicker(image: $viewModel.capturedImage, sourceType: .camera) // 保留你的 ImagePicker

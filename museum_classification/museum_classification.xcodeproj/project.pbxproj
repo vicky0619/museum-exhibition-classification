@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		442F13E6E7E592B62C0B03F2 /* Pods_museum_classification_museum_classificationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D01A866D9E8348CBC8D19A6 /* Pods_museum_classification_museum_classificationUITests.framework */; };
 		AA57784418BD569B849FCA22 /* Pods_museum_classification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E6D195DC4C07078EC8437F /* Pods_museum_classification.framework */; };
+		BE2132442CA85870000530CD /* epoch300_float32.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BE2132432CA85870000530CD /* epoch300_float32.tflite */; };
+		BE2132452CA85870000530CD /* epoch300_float32.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BE2132432CA85870000530CD /* epoch300_float32.tflite */; };
+		BE2132462CA85870000530CD /* epoch300_float32.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BE2132432CA85870000530CD /* epoch300_float32.tflite */; };
 		BEC771842C9B41F900758AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771832C9B41F900758AB2 /* ViewController.swift */; };
 		BEC771852C9B41F900758AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771832C9B41F900758AB2 /* ViewController.swift */; };
 		BEC771862C9B41F900758AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771832C9B41F900758AB2 /* ViewController.swift */; };
@@ -64,6 +67,7 @@
 		7E4E91DCD7C5185239CA27D9 /* Pods-museum_classification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification.debug.xcconfig"; path = "Target Support Files/Pods-museum_classification/Pods-museum_classification.debug.xcconfig"; sourceTree = "<group>"; };
 		8D2469CB056F4E594BA671C0 /* Pods-museum_classification-museum_classificationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification-museum_classificationUITests.release.xcconfig"; path = "Target Support Files/Pods-museum_classification-museum_classificationUITests/Pods-museum_classification-museum_classificationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B26AA08603DBF60576A69034 /* Pods-museum_classificationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classificationTests.debug.xcconfig"; path = "Target Support Files/Pods-museum_classificationTests/Pods-museum_classificationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE2132432CA85870000530CD /* epoch300_float32.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = epoch300_float32.tflite; sourceTree = "<group>"; };
 		BE7038BC26E90AC60C992A25 /* Pods-museum_classification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification.release.xcconfig"; path = "Target Support Files/Pods-museum_classification/Pods-museum_classification.release.xcconfig"; sourceTree = "<group>"; };
 		BEC771832C9B41F900758AB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEC771872C9B420300758AB2 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				BEDAD4012C90B1A000111A1A /* aigo_model_v1.tflite */,
+				BE2132432CA85870000530CD /* epoch300_float32.tflite */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE2132462CA85870000530CD /* epoch300_float32.tflite in Resources */,
 				BEDAD4022C90B1A000111A1A /* aigo_model_v1.tflite in Resources */,
 				BEC7B1F22C83790900A8F9DD /* Preview Assets.xcassets in Resources */,
 				BEDAD4122C91FBB800111A1A /* Assets.xcassets in Resources */,
@@ -328,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEDAD4182C91FC0200111A1A /* Main.storyboard in Resources */,
+				BE2132442CA85870000530CD /* epoch300_float32.tflite in Resources */,
 				BEDAD4032C90B1A000111A1A /* aigo_model_v1.tflite in Resources */,
 				BEDAD4132C91FBB800111A1A /* Assets.xcassets in Resources */,
 			);
@@ -338,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEDAD4192C91FC0200111A1A /* Main.storyboard in Resources */,
+				BE2132452CA85870000530CD /* epoch300_float32.tflite in Resources */,
 				BEDAD4042C90B1A000111A1A /* aigo_model_v1.tflite in Resources */,
 				BEDAD4142C91FBB800111A1A /* Assets.xcassets in Resources */,
 			);
