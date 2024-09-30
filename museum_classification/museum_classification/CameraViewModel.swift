@@ -204,10 +204,12 @@ class CameraViewModel: ObservableObject {
             // 推理
             try yoloInterpreter.invoke()
             print("YOLO 模型推理成功")
-            
             // 獲取 YOLO 模型的標籤
-            return parseYoloOutput(from: yoloInterpreter)
-            
+            let output1 = parseYoloOutput(from: yoloInterpreter)
+            print("原始 YOLO 模型輸出：\(output1 ?? "無結果")")
+            // 獲取 YOLO 模型的標籤
+            return output1
+        
         } catch {
             errorMessage = "YOLO 推理失敗：\(error.localizedDescription)"
             print("YOLO 推理失敗：\(error.localizedDescription)")
@@ -268,12 +270,10 @@ class CameraViewModel: ObservableObject {
             try yoloInterpreter.invoke()
             print("YOLO 推理完成")
             
-            // 獲取 YOLO 模型輸出
-            let yoloOutput = parseYoloOutput(from: yoloInterpreter)
-            print("YOLO 模型輸出：", yoloOutput)
-            
-            // 在這裡與原始 YOLO 輸出進行比較
-            return yoloOutput
+            let output2 = parseYoloOutput(from: yoloInterpreter)
+            print("消反光後 YOLO 模型輸出：\(output2 ?? "無結果")")
+
+            return output2
             
         } catch {
             errorMessage = "消反光 YOLO 推理失敗：\(error.localizedDescription)"
@@ -283,27 +283,28 @@ class CameraViewModel: ObservableObject {
 
     
     // 比較兩者輸出，取最大值
+    // 比較兩者輸出，取最大值
     func getFinalResult() {
-        guard let yoloOutput = processYolo(), !yoloOutput.isEmpty else {
+        // 獲取原始 YOLO 模型的輸出
+        guard let output1 = processYolo(), !output1.isEmpty else {
             errorMessage = "YOLO 模型輸出為空或無效"
             print("YOLO 模型輸出為空或無效")
             return
         }
         
-        guard let antiReflectionYoloOutput = processAntiReflectionYolo(), !antiReflectionYoloOutput.isEmpty else {
+        // 獲取消反光後 YOLO 模型的輸出
+        guard let output2 = processAntiReflectionYolo(), !output2.isEmpty else {
             errorMessage = "消反光 YOLO 模型輸出為空或無效"
             print("消反光 YOLO 模型輸出為空或無效")
             return
         }
         
-        // 比較兩個輸出並取最大值 (這裡簡單取最大值，你可以根據需要定制比較方式)
-        if let yoloMax = yoloOutput.max(), let antiReflectionMax = antiReflectionYoloOutput.max() {
-            finalResult = yoloMax >= antiReflectionMax ? "YOLO 模型結果更好" : "消反光模型結果更好"
-            print("最終比較結果：\(finalResult)")
-        } else {
-            errorMessage = "無法比較模型輸出"
-            print("無法比較模型輸出")
-        }
+        print("原始 YOLO 輸出：\(output1)")
+        print("消反光後 YOLO 輸出：\(output2)")
+        
+        // 根據需要比較兩者輸出，這裡僅舉例打印
+        finalResult = output1 > output2 ? "YOLO 模型結果更好" : "消反光模型結果更好"
+        print("最終比較結果：\(finalResult)")
     }
 
     
@@ -414,24 +415,31 @@ class CameraViewModel: ObservableObject {
         // 將輸出轉換為 Float32 數組
         let outputData = outputTensor.data.toArray(type: Float32.self)
         
-        print("YOLO 模型輸出數據：\(outputData)") // 打印輸出數據
-
-        // 找到最大概率的索引
-        guard let maxIndex = outputData.indices.max(by: { outputData[$0] < outputData[$1] }) else {
-            print("無法找到最大概率索引")
-            return nil
+        // 假設 outputData 是 [1, 11, 8400]，所以你需要遍歷所有的 8400 個預測
+        var maxProbability: Float = -1.0
+        var detectedClassIndex: Int = -1
+        
+        // 遍歷每個 bounding box 預測
+            for i in 0..<8400 {
+                // 第 0 到 6 個值是類別機率
+                let probabilities = outputData[i * 11..<(i * 11 + 7)]
+                // 找到最高機率的類別
+                if let maxIndex = probabilities.indices.max(by: { probabilities[$0] < probabilities[$1] }), probabilities[maxIndex] > maxProbability {
+                    maxProbability = probabilities[maxIndex]
+                    detectedClassIndex = maxIndex
+                }
+                
+                // 你可以在這裡繼續提取 bounding box 座標
+                // let boundingBox = outputData[(i * 11 + 7)..<((i * 11) + 11)]
+            }
+            
+            // 確認檢測到的類別索引在範圍內，並且機率大於一定的閾值
+            if detectedClassIndex >= 0 && detectedClassIndex < 7 && maxProbability > 0.5 { // 假設閾值是 0.5
+                return yoloLabels[detectedClassIndex]
+            } else {
+                return "未知類別"
+            }
         }
-        // 確保 maxIndex 不超出標籤範圍
-        print("YOLO 模型輸出最大索引：\(maxIndex), 值：\(outputData[maxIndex])")
-        print("標籤數量：\(yoloLabels.count)")
-
-        if maxIndex < yoloLabels.count {
-            return yoloLabels[maxIndex]
-        } else {
-            print("索引超出標籤範圍")
-            return "未知類別" // 或返回其他提示
-        }
-    }
 
 }
 
