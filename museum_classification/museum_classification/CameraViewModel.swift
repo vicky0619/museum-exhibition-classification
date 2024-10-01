@@ -206,6 +206,16 @@ class CameraViewModel: ObservableObject {
             print("YOLO 模型推理成功")
             // 獲取 YOLO 模型的標籤
             let output1 = parseYoloOutput(from: yoloInterpreter)
+            // 打印 output1 的類型
+            print("output1 的類型：\(type(of: output1))")
+
+            // 解包並打印 output1 的內容
+            if let output1 = output1 {
+                print("output1 的內容：\(output1)")
+            } else {
+                print("output1 為 nil")
+            }
+
             print("原始 YOLO 模型輸出：\(output1 ?? "無結果")")
             // 獲取 YOLO 模型的標籤
             return output1
@@ -434,7 +444,7 @@ class CameraViewModel: ObservableObject {
             }
             
             // 確認檢測到的類別索引在範圍內，並且機率大於一定的閾值
-            if detectedClassIndex >= 0 && detectedClassIndex < 7 && maxProbability > 0.5 { // 假設閾值是 0.5
+            if detectedClassIndex >= 0 && detectedClassIndex < 7 && maxProbability > 0.3 { // 假設閾值是 0.5
                 return yoloLabels[detectedClassIndex]
             } else {
                 return "未知類別"
