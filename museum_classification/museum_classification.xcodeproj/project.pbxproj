@@ -12,6 +12,9 @@
 		BE2132442CA85870000530CD /* epoch300_float32.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BE2132432CA85870000530CD /* epoch300_float32.tflite */; };
 		BE2132452CA85870000530CD /* epoch300_float32.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BE2132432CA85870000530CD /* epoch300_float32.tflite */; };
 		BE2132462CA85870000530CD /* epoch300_float32.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BE2132432CA85870000530CD /* epoch300_float32.tflite */; };
+		BE6DEF402CAD903A00E64DB8 /* no_reflex2000_float32.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BE6DEF3F2CAD903A00E64DB8 /* no_reflex2000_float32.tflite */; };
+		BE6DEF412CAD903A00E64DB8 /* no_reflex2000_float32.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BE6DEF3F2CAD903A00E64DB8 /* no_reflex2000_float32.tflite */; };
+		BE6DEF422CAD903A00E64DB8 /* no_reflex2000_float32.tflite in Resources */ = {isa = PBXBuildFile; fileRef = BE6DEF3F2CAD903A00E64DB8 /* no_reflex2000_float32.tflite */; };
 		BEC771842C9B41F900758AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771832C9B41F900758AB2 /* ViewController.swift */; };
 		BEC771852C9B41F900758AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771832C9B41F900758AB2 /* ViewController.swift */; };
 		BEC771862C9B41F900758AB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC771832C9B41F900758AB2 /* ViewController.swift */; };
@@ -68,6 +71,7 @@
 		8D2469CB056F4E594BA671C0 /* Pods-museum_classification-museum_classificationUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification-museum_classificationUITests.release.xcconfig"; path = "Target Support Files/Pods-museum_classification-museum_classificationUITests/Pods-museum_classification-museum_classificationUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B26AA08603DBF60576A69034 /* Pods-museum_classificationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classificationTests.debug.xcconfig"; path = "Target Support Files/Pods-museum_classificationTests/Pods-museum_classificationTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BE2132432CA85870000530CD /* epoch300_float32.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = epoch300_float32.tflite; sourceTree = "<group>"; };
+		BE6DEF3F2CAD903A00E64DB8 /* no_reflex2000_float32.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = no_reflex2000_float32.tflite; sourceTree = "<group>"; };
 		BE7038BC26E90AC60C992A25 /* Pods-museum_classification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-museum_classification.release.xcconfig"; path = "Target Support Files/Pods-museum_classification/Pods-museum_classification.release.xcconfig"; sourceTree = "<group>"; };
 		BEC771832C9B41F900758AB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEC771872C9B420300758AB2 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			children = (
 				BEDAD4012C90B1A000111A1A /* aigo_model_v1.tflite */,
 				BE2132432CA85870000530CD /* epoch300_float32.tflite */,
+				BE6DEF3F2CAD903A00E64DB8 /* no_reflex2000_float32.tflite */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				BEDAD4022C90B1A000111A1A /* aigo_model_v1.tflite in Resources */,
 				BEC7B1F22C83790900A8F9DD /* Preview Assets.xcassets in Resources */,
 				BEDAD4122C91FBB800111A1A /* Assets.xcassets in Resources */,
+				BE6DEF422CAD903A00E64DB8 /* no_reflex2000_float32.tflite in Resources */,
 				BEDAD4172C91FC0200111A1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +341,7 @@
 			files = (
 				BEDAD4182C91FC0200111A1A /* Main.storyboard in Resources */,
 				BE2132442CA85870000530CD /* epoch300_float32.tflite in Resources */,
+				BE6DEF412CAD903A00E64DB8 /* no_reflex2000_float32.tflite in Resources */,
 				BEDAD4032C90B1A000111A1A /* aigo_model_v1.tflite in Resources */,
 				BEDAD4132C91FBB800111A1A /* Assets.xcassets in Resources */,
 			);
@@ -346,6 +353,7 @@
 			files = (
 				BEDAD4192C91FC0200111A1A /* Main.storyboard in Resources */,
 				BE2132452CA85870000530CD /* epoch300_float32.tflite in Resources */,
+				BE6DEF402CAD903A00E64DB8 /* no_reflex2000_float32.tflite in Resources */,
 				BEDAD4042C90B1A000111A1A /* aigo_model_v1.tflite in Resources */,
 				BEDAD4142C91FBB800111A1A /* Assets.xcassets in Resources */,
 			);

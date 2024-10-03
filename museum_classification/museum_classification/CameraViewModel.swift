@@ -31,7 +31,7 @@ class CameraViewModel: ObservableObject {
     // 加載 YOLO 和消反光模型
     func loadModels() {
         // 加載 YOLO 模型
-        if let yoloPath = Bundle.main.path(forResource: "epoch300_float32", ofType: "tflite") {
+        if let yoloPath = Bundle.main.path(forResource: "no_reflex2000_float32", ofType: "tflite") {
             do {
                 yoloInterpreter = try Interpreter(modelPath: yoloPath)
                 try yoloInterpreter?.allocateTensors()
@@ -313,9 +313,10 @@ class CameraViewModel: ObservableObject {
         print("消反光後 YOLO 輸出：\(output2)")
         
         // 根據需要比較兩者輸出，這裡僅舉例打印
-        finalResult = output1 > output2 ? "YOLO 模型結果更好" : "消反光模型結果更好"
+        finalResult = output1 != "未知類別" && output1 > output2 ? "YOLO 模型結果更好：\(output1)" : "消反光模型結果更好：\(output2)"
         print("最終比較結果：\(finalResult)")
     }
+
 
     
     // 圖片預處理
@@ -411,47 +412,149 @@ class CameraViewModel: ObservableObject {
         
         return UIImage(cgImage: cgImage)
     }
-    
+    struct BoundingBox {
+        let x1: Float
+        let y1: Float
+        let x2: Float
+        let y2: Float
+        let cx: Float
+        let cy: Float
+        let w: Float
+        let h: Float
+        let cnf: Float
+        let cls: Int
+        let clsName: String
+    }
     // YOLO 模型的標籤 (根據你的模型更新這些標籤)
-    let yoloLabels = ["文物1", "文物2", "文物3", "文物4", "文物5", "文物6", "文物7"]
+    let yoloLabels = ["obj1", "obj2", "obj3", "obj4", "obj5", "obj6", "obj7"]
 
-    // 解碼 YOLO 模型輸出
     private func parseYoloOutput(from interpreter: Interpreter) -> String? {
         guard let outputTensor = try? interpreter.output(at: 0) else {
             print("無法獲取 YOLO 模型的輸出張量")
             return nil
         }
         
+        // 查看原始字節內容
+        let data = outputTensor.data
+
+        // 打印 Data 長度
+        print("Data Length: \(data.count)")
+
+        // 以字節格式打印前 100 個字節（你可以調整數量）
+        print("Raw Data Bytes: \(data.prefix(100))")
+        // 使用 `parseBoundingBoxes` 來獲取 `BoundingBox` 陣列
+        let boundingBoxes = parseBoundingBoxes(from: outputTensor.data)
+
+        // 打印每個 bounding box
+        for box in boundingBoxes {
+            print("BoundingBox: \(box)")
+        }
+        // 初始化一個布林值來追蹤是否有非 "未知類別" 的 `clsName`
+            var foundNonUnknownClass = false
+            
+            // 遍歷所有 bounding boxes 來檢查 `clsName`
+            for box in boundingBoxes {
+                if box.clsName != "未知類別" {
+                    foundNonUnknownClass = true
+                    print("找到非未知類別的標籤：\(box.clsName)")
+                }
+            }
+            
+            // 打印是否找到非未知類別的標籤
+            if foundNonUnknownClass {
+                print("已找到非 '未知類別' 的標籤")
+            } else {
+                print("所有標籤都是 '未知類別'")
+            }
         // 將輸出轉換為 Float32 數組
         let outputData = outputTensor.data.toArray(type: Float32.self)
         
-        // 假設 outputData 是 [1, 11, 8400]，所以你需要遍歷所有的 8400 個預測
-        var maxProbability: Float = -1.0
-        var detectedClassIndex: Int = -1
+        // 初始化一個 maxProbabilities 陣列，大小為 11
+        var maxProbabilities = [Float](repeating: -1.0, count: 11)
+        //var detectedClassIndex: Int = -1
+        var detectedBoundingBoxIndex: Int = -1
         
-        // 遍歷每個 bounding box 預測
-            for i in 0..<8400 {
-                // 第 0 到 6 個值是類別機率
-                let probabilities = outputData[i * 11..<(i * 11 + 7)]
-                // 找到最高機率的類別
-                if let maxIndex = probabilities.indices.max(by: { probabilities[$0] < probabilities[$1] }), probabilities[maxIndex] > maxProbability {
-                    maxProbability = probabilities[maxIndex]
-                    detectedClassIndex = maxIndex
+        // 遍歷所有 bounding box，找到最高機率的類別
+        for i in 0..<8400 {
+            // 獲取每個 bounding box 的前 7 個類別機率值
+            let classProbabilities = outputData[(i * 11)..<(i * 11 + 11)]
+            // 更新 maxProbabilities 中的最大機率
+            for (j, probability) in classProbabilities.enumerated() {
+                if probability > maxProbabilities[j] {
+                    maxProbabilities[j] = probability
+                    detectedBoundingBoxIndex = i // 紀錄當前的 bounding box 索引
                 }
-                
-                // 你可以在這裡繼續提取 bounding box 座標
-                // let boundingBox = outputData[(i * 11 + 7)..<((i * 11) + 11)]
-            }
-            
-            // 確認檢測到的類別索引在範圍內，並且機率大於一定的閾值
-            if detectedClassIndex >= 0 && detectedClassIndex < 7 && maxProbability > 0.3 { // 假設閾值是 0.5
-                return yoloLabels[detectedClassIndex]
-            } else {
-                return "未知類別"
             }
         }
+        
+        // 打印每個 maxProbability
+        for (index, probability) in maxProbabilities.enumerated() {
+            print("maxProbability[\(index)]: \(probability)")
+        }
+        // 找到 maxProbabilities 中的最大機率
+            if let maxIndex = maxProbabilities.indices.max(by: { maxProbabilities[$0] < maxProbabilities[$1] }) {
+                let maxProbability = maxProbabilities[maxIndex]
+                
+                // 根據最大機率來確定標籤
+                if maxProbability > 0.5 {
+                    // 計算在 yoloLabels 中的實際索引
+                    let yoloLabelIndex = maxIndex // 因為前 4 個位置可能不是類別
+                    print("maxIndex 值：\(maxIndex)")
+                    print("yoloLabelIndex 值：\(yoloLabelIndex)")
+                    if yoloLabelIndex >= 0 && yoloLabelIndex < yoloLabels.count {
+                        let detectedLabel = yoloLabels[yoloLabelIndex]
+                        print("檢測到的類別：\(detectedLabel)，機率：\(maxProbability)")
+                        return detectedLabel
+                    }
+                }
+            }
+            
+            return "未知類別"
+    }
+
+    func parseBoundingBoxes(from data: Data) -> [BoundingBox] {
+        var boundingBoxes: [BoundingBox] = []
+
+        // 定義 `Float` 和 `Int` 的大小
+        let floatSize = MemoryLayout<Float>.size
+        let intSize = MemoryLayout<Int>.size
+        
+        // 確保資料長度足夠解析一個完整的 `BoundingBox`
+        let boundingBoxSize = floatSize * 9 + intSize // 每個 BoundingBox 有 9 個 Float 和 1 個 Int
+
+        guard data.count % boundingBoxSize == 0 else {
+            print("Data 長度不匹配 BoundingBox 結構")
+            return boundingBoxes
+        }
+
+        // 開始解析
+        for i in stride(from: 0, to: data.count, by: boundingBoxSize) {
+            let x1 = data.subdata(in: i..<i + floatSize).withUnsafeBytes { $0.load(as: Float.self) }
+            let y1 = data.subdata(in: i + floatSize..<i + floatSize * 2).withUnsafeBytes { $0.load(as: Float.self) }
+            let x2 = data.subdata(in: i + floatSize * 2..<i + floatSize * 3).withUnsafeBytes { $0.load(as: Float.self) }
+            let y2 = data.subdata(in: i + floatSize * 3..<i + floatSize * 4).withUnsafeBytes { $0.load(as: Float.self) }
+            let cx = data.subdata(in: i + floatSize * 4..<i + floatSize * 5).withUnsafeBytes { $0.load(as: Float.self) }
+            let cy = data.subdata(in: i + floatSize * 5..<i + floatSize * 6).withUnsafeBytes { $0.load(as: Float.self) }
+            let w = data.subdata(in: i + floatSize * 6..<i + floatSize * 7).withUnsafeBytes { $0.load(as: Float.self) }
+            let h = data.subdata(in: i + floatSize * 7..<i + floatSize * 8).withUnsafeBytes { $0.load(as: Float.self) }
+            let cnf = data.subdata(in: i + floatSize * 8..<i + floatSize * 9).withUnsafeBytes { $0.load(as: Float.self) }
+            let cls = data.subdata(in: i + floatSize * 9..<i + floatSize * 9 + intSize).withUnsafeBytes { $0.load(as: Int.self) }
+            
+            // 確保 cls 在 yoloLabels 的範圍內
+            let clsName = cls >= 0 && cls < yoloLabels.count ? yoloLabels[cls] : "未知類別"
+                    
+            let boundingBox = BoundingBox(x1: x1, y1: y1, x2: x2, y2: y2, cx: cx, cy: cy, w: w, h: h, cnf: cnf, cls: cls, clsName: clsName)
+            boundingBoxes.append(boundingBox)
+        }
+
+        return boundingBoxes
+    }
+
+
 
 }
+
+
 
 
 // 擴展 UIImage
