@@ -172,9 +172,11 @@ class CameraViewModel: ObservableObject {
             completion(false)
         }
     }
-    
+    private var outputData: [Float32] = [] // 初始化為空
     // 處理 YOLO 模型推理
     func processYolo() -> String? {
+        // 初始化 outputData
+        outputData = []
         guard let image = capturedImage else {
             errorMessage = "沒有擷取到圖像"
             return nil
@@ -231,6 +233,8 @@ class CameraViewModel: ObservableObject {
     
     // 處理消反光 -> YOLO 模型推理
     func processAntiReflectionYolo() -> String? {
+        // 初始化 outputData
+        outputData = []
         guard let image = capturedImage else {
             errorMessage = "沒有擷取到圖像"
             return nil
@@ -425,6 +429,8 @@ class CameraViewModel: ObservableObject {
         let cls: Int
         let clsName: String
     }
+    
+
     // YOLO 模型的標籤 (根據你的模型更新這些標籤)
     let yoloLabels = ["obj1", "obj2", "obj3", "obj4", "obj5", "obj6", "obj7"]
 
@@ -436,53 +442,63 @@ class CameraViewModel: ObservableObject {
         
         // 查看原始字節內容
         let data = outputTensor.data
+        
+        // 將輸出轉換為 Float32 數組
+        let outputData = data.toArray(type: Float32.self)
+        
+        // Save the output data to file
 
-        // 打印 Data 長度
-        print("Data Length: \(data.count)")
+        // 打印所有 float32 值
+        for (index, value) in outputData.enumerated() {
+            print("Float32 value at index \(index): \(value)")
+        }
 
         // 以字節格式打印前 100 個字節（你可以調整數量）
-        print("Raw Data Bytes: \(data.prefix(100))")
+        //print("Raw Data Bytes: \(data.prefix(100))")
         // 使用 `parseBoundingBoxes` 來獲取 `BoundingBox` 陣列
         let boundingBoxes = parseBoundingBoxes(from: outputTensor.data)
 
         // 打印每個 bounding box
-        for box in boundingBoxes {
-            print("BoundingBox: \(box)")
-        }
+        //for box in boundingBoxes {
+          //  print("BoundingBox: \(box)")
+       // }
         // 初始化一個布林值來追蹤是否有非 "未知類別" 的 `clsName`
             var foundNonUnknownClass = false
             
             // 遍歷所有 bounding boxes 來檢查 `clsName`
-            for box in boundingBoxes {
-                if box.clsName != "未知類別" {
-                    foundNonUnknownClass = true
-                    print("找到非未知類別的標籤：\(box.clsName)")
-                }
-            }
+          //  for box in boundingBoxes {
+            //    if box.clsName != "未知類別" {
+               //     foundNonUnknownClass = true
+                 //   print("找到非未知類別的標籤：\(box.clsName)")
+              //  }
+            //}
             
             // 打印是否找到非未知類別的標籤
-            if foundNonUnknownClass {
-                print("已找到非 '未知類別' 的標籤")
-            } else {
-                print("所有標籤都是 '未知類別'")
-            }
+    //        if foundNonUnknownClass {
+      //          print("已找到非 '未知類別' 的標籤")
+        //    } else {
+          //      print("所有標籤都是 '未知類別'")
+           // }
         // 將輸出轉換為 Float32 數組
-        let outputData = outputTensor.data.toArray(type: Float32.self)
+        //let outputData = outputTensor.data.toArray(type: Float32.self)
         
         // 初始化一個 maxProbabilities 陣列，大小為 11
         var maxProbabilities = [Float](repeating: -1.0, count: 11)
-        //var detectedClassIndex: Int = -1
-        var detectedBoundingBoxIndex: Int = -1
+        // 初始化陣列來追踪每個類別的最大 bounding box 索引
+        var detectedBoundingBoxIndices = [Int](repeating: -1, count: 11)
+
         
         // 遍歷所有 bounding box，找到最高機率的類別
-        for i in 0..<8400 {
-            // 獲取每個 bounding box 的前 7 個類別機率值
-            let classProbabilities = outputData[(i * 11)..<(i * 11 + 11)]
-            // 更新 maxProbabilities 中的最大機率
-            for (j, probability) in classProbabilities.enumerated() {
+        for j in 0..<11 {
+            // 遍歷所有 8400 個 bounding box
+            for i in 0..<8400 {
+                let probabilityIndex = 8400*j+i
+                let probability = outputData[probabilityIndex]
+                
+                // 更新每個類別的最大機率
                 if probability > maxProbabilities[j] {
                     maxProbabilities[j] = probability
-                    detectedBoundingBoxIndex = i // 紀錄當前的 bounding box 索引
+                    //detectedBoundingBoxIndices[j] = i // 紀錄當前的 bounding box 索引
                 }
             }
         }
@@ -498,8 +514,7 @@ class CameraViewModel: ObservableObject {
                 // 根據最大機率來確定標籤
                 if maxProbability > 0.5 {
                     // 計算在 yoloLabels 中的實際索引
-                    let yoloLabelIndex = maxIndex // 因為前 4 個位置可能不是類別
-                    print("maxIndex 值：\(maxIndex)")
+                    let yoloLabelIndex = maxIndex
                     print("yoloLabelIndex 值：\(yoloLabelIndex)")
                     if yoloLabelIndex >= 0 && yoloLabelIndex < yoloLabels.count {
                         let detectedLabel = yoloLabels[yoloLabelIndex]
