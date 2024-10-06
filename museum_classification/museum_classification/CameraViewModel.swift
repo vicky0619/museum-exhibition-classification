@@ -438,7 +438,7 @@ class CameraViewModel: ObservableObject {
 
     // YOLO 模型的標籤 (根據你的模型更新這些標籤)
     let yoloLabels = ["obj1", "obj2", "obj3", "obj4", "obj5", "obj6", "obj7"]
-
+    let yoloChineseLabels = ["蟠龍方壺", "虎形尊", "獸形器座", "青花花鳥八角盒", "三彩馬", "金柄銅短劍", "三彩加藍人面鎮墓獸"]
     private func parseYoloOutput(from interpreter: Interpreter) -> (String, Float)? {
         guard let outputTensor = try? interpreter.output(at: 0) else {
             print("無法獲取 YOLO 模型的輸出張量")
@@ -522,7 +522,7 @@ class CameraViewModel: ObservableObject {
                     let yoloLabelIndex = maxIndex-4
                     print("yoloLabelIndex 值：\(yoloLabelIndex)")
                     if yoloLabelIndex >= 0 && yoloLabelIndex < yoloLabels.count {
-                        let detectedLabel = yoloLabels[yoloLabelIndex]
+                        let detectedLabel = yoloChineseLabels[yoloLabelIndex] // 使用中文標籤
                         print("檢測到的類別：\(detectedLabel)，機率：\(maxProbability)")
                         return (detectedLabel, maxProbability)
                     }
