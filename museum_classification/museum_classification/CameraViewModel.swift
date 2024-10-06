@@ -174,7 +174,7 @@ class CameraViewModel: ObservableObject {
     }
     private var outputData: [Float32] = [] // 初始化為空
     // 處理 YOLO 模型推理
-    func processYolo() -> String? {
+    func processYolo() -> (String, Float)? {
         // 初始化 outputData
         outputData = []
         guard let image = capturedImage else {
@@ -207,20 +207,16 @@ class CameraViewModel: ObservableObject {
             try yoloInterpreter.invoke()
             print("YOLO 模型推理成功")
             // 獲取 YOLO 模型的標籤
-            let output1 = parseYoloOutput(from: yoloInterpreter)
-            // 打印 output1 的類型
-            print("output1 的類型：\(type(of: output1))")
-
-            // 解包並打印 output1 的內容
-            if let output1 = output1 {
-                print("output1 的內容：\(output1)")
+            if let output1 = parseYoloOutput(from: yoloInterpreter) {
+                // 打印 output1 的類型
+                print("output1 的類型：\(type(of: output1))")
+                print("原始 YOLO 模型輸出：\(output1.0)，機率：\(output1.1)")
+                return output1
             } else {
-                print("output1 為 nil")
+                print("YOLO 模型無結果")
+                return nil
             }
-
-            print("原始 YOLO 模型輸出：\(output1 ?? "無結果")")
-            // 獲取 YOLO 模型的標籤
-            return output1
+                    
         
         } catch {
             errorMessage = "YOLO 推理失敗：\(error.localizedDescription)"
@@ -232,7 +228,7 @@ class CameraViewModel: ObservableObject {
 
     
     // 處理消反光 -> YOLO 模型推理
-    func processAntiReflectionYolo() -> String? {
+    func processAntiReflectionYolo() -> (String, Float)? {
         // 初始化 outputData
         outputData = []
         guard let image = capturedImage else {
@@ -284,40 +280,49 @@ class CameraViewModel: ObservableObject {
             try yoloInterpreter.invoke()
             print("YOLO 推理完成")
             
-            let output2 = parseYoloOutput(from: yoloInterpreter)
-            print("消反光後 YOLO 模型輸出：\(output2 ?? "無結果")")
-
-            return output2
-            
+            // 獲取 YOLO 模型的標籤
+            if let output2 = parseYoloOutput(from: yoloInterpreter) {
+                print("消反光後 YOLO 模型輸出：\(output2.0)，機率：\(output2.1)")
+                return output2
+            } else {
+                print("YOLO 模型無結果")
+                return nil
+            }
+                    
         } catch {
             errorMessage = "消反光 YOLO 推理失敗：\(error.localizedDescription)"
             return nil
         }
     }
 
+
     
     // 比較兩者輸出，取最大值
     // 比較兩者輸出，取最大值
     func getFinalResult() {
         // 獲取原始 YOLO 模型的輸出
-        guard let output1 = processYolo(), !output1.isEmpty else {
+        guard let (output1Label, output1Probability) = processYolo() else {
             errorMessage = "YOLO 模型輸出為空或無效"
             print("YOLO 模型輸出為空或無效")
             return
         }
         
         // 獲取消反光後 YOLO 模型的輸出
-        guard let output2 = processAntiReflectionYolo(), !output2.isEmpty else {
+        guard let (output2Label, output2Probability) = processAntiReflectionYolo() else {
             errorMessage = "消反光 YOLO 模型輸出為空或無效"
             print("消反光 YOLO 模型輸出為空或無效")
             return
         }
         
-        print("原始 YOLO 輸出：\(output1)")
-        print("消反光後 YOLO 輸出：\(output2)")
+        print("原始 YOLO 輸出：\(output1Label)，機率：\(output1Probability)")
+        print("消反光後 YOLO 輸出：\(output2Label)，機率：\(output2Probability)")
         
-        // 根據需要比較兩者輸出，這裡僅舉例打印
-        finalResult = output1 != "未知類別" && output1 > output2 ? "YOLO 模型結果更好：\(output1)" : "消反光模型結果更好：\(output2)"
+        // 比較兩者的最大機率，並顯示最終結果
+        if output1Probability > output2Probability {
+            finalResult = output1Label // 將 output1Label 設置為最終結果
+        } else {
+            finalResult = output2Label // 將 output2Label 設置為最終結果
+        }
         print("最終比較結果：\(finalResult)")
     }
 
@@ -434,7 +439,7 @@ class CameraViewModel: ObservableObject {
     // YOLO 模型的標籤 (根據你的模型更新這些標籤)
     let yoloLabels = ["obj1", "obj2", "obj3", "obj4", "obj5", "obj6", "obj7"]
 
-    private func parseYoloOutput(from interpreter: Interpreter) -> String? {
+    private func parseYoloOutput(from interpreter: Interpreter) -> (String, Float)? {
         guard let outputTensor = try? interpreter.output(at: 0) else {
             print("無法獲取 YOLO 模型的輸出張量")
             return nil
@@ -449,9 +454,9 @@ class CameraViewModel: ObservableObject {
         // Save the output data to file
 
         // 打印所有 float32 值
-        for (index, value) in outputData.enumerated() {
-            print("Float32 value at index \(index): \(value)")
-        }
+        //for (index, value) in outputData.enumerated() {
+          //  print("Float32 value at index \(index): \(value)")
+        //}
 
         // 以字節格式打印前 100 個字節（你可以調整數量）
         //print("Raw Data Bytes: \(data.prefix(100))")
@@ -489,7 +494,7 @@ class CameraViewModel: ObservableObject {
 
         
         // 遍歷所有 bounding box，找到最高機率的類別
-        for j in 0..<11 {
+        for j in 4..<11 {
             // 遍歷所有 8400 個 bounding box
             for i in 0..<8400 {
                 let probabilityIndex = 8400*j+i
@@ -514,17 +519,17 @@ class CameraViewModel: ObservableObject {
                 // 根據最大機率來確定標籤
                 if maxProbability > 0.5 {
                     // 計算在 yoloLabels 中的實際索引
-                    let yoloLabelIndex = maxIndex
+                    let yoloLabelIndex = maxIndex-4
                     print("yoloLabelIndex 值：\(yoloLabelIndex)")
                     if yoloLabelIndex >= 0 && yoloLabelIndex < yoloLabels.count {
                         let detectedLabel = yoloLabels[yoloLabelIndex]
                         print("檢測到的類別：\(detectedLabel)，機率：\(maxProbability)")
-                        return detectedLabel
+                        return (detectedLabel, maxProbability)
                     }
                 }
             }
             
-            return "未知類別"
+            return ("未知類別",0)
     }
 
     func parseBoundingBoxes(from data: Data) -> [BoundingBox] {
