@@ -43,7 +43,7 @@ Competition Website: [AIGO Competition](https://aigo.org.tw/zh-tw/competitions/d
 
 | After Capturing a Photo                                          | After Processing the Photo                                         |
 |------------------------------------------------------------------|--------------------------------------------------------------------|
-| <img src="https://i.imgur.com/fQN3SoY.png" width="300"/>         | <img src="https://i.imgur.com/OpWMbaz.png" width="300"/>           |
+| <img src="https://i.imgur.com/fQN3SoY.png" width="300"/>         | <img src="https://i.imgur.com/bn5syr6.png" width="300"/>           |
 
 ## 📂 Project Structure
 ```bash
@@ -119,7 +119,7 @@ If you have any questions or suggestions about this project, feel free to reach 
 
 | 拍攝完成                                                         | 處理相片後                                                       |
 |------------------------------------------------------------------|--------------------------------------------------------------------|
-| <img src="https://i.imgur.com/fQN3SoY.png" width="300"/>         | <img src="https://i.imgur.com/OpWMbaz.png" width="300"/>           |
+| <img src="https://i.imgur.com/fQN3SoY.png" width="300"/>         | <img src="https://i.imgur.com/bn5syr6.png" width="300"/>           |
 
 ## 📂 專案結構
 ```bash
