@@ -1,13 +1,9 @@
-
-
-### English Version
-
 # Museum Exhibition Classification Project
 
 ## 📖 Project Overview
 This project is a **Museum Object Classification** solution that uses **YOLO (You Only Look Once) object detection model** and an **anti-reflection model** to identify artifacts and artworks in museums and exhibition halls. It aims to enhance the accuracy of object recognition by removing reflections from images and then performing classification on the cleaned images.
 
-Competition Website: https://aigo.org.tw/zh-tw/competitions/details/507
+Competition Website: [AIGO Competition](https://aigo.org.tw/zh-tw/competitions/details/507)
 
 ## ✨ Key Features
 - **YOLO Object Detection**: Identifies and classifies museum objects from captured images, supporting multiple categories.
@@ -39,6 +35,16 @@ Competition Website: https://aigo.org.tw/zh-tw/competitions/details/507
 2. **Process Photo**: Click on the "Process Photo" button to execute both YOLO detection and anti-reflection processes. The app will display the best classification result once completed.
 3. **Save Image**: The reflection-removed image will automatically be saved to your photo library.
 
+## 📱 App Screenshots
+
+| Initial Screen                                                   | After Opening the Camera                                           |
+|------------------------------------------------------------------|--------------------------------------------------------------------|
+| <img src="https://i.imgur.com/CjIMf58.png" width="300"/>         | <img src="https://i.imgur.com/OXhtYho.png" width="300"/>           |
+
+| After Capturing a Photo                                          | After Processing the Photo                                         |
+|------------------------------------------------------------------|--------------------------------------------------------------------|
+| <img src="https://i.imgur.com/fQN3SoY.png" width="300"/>         | <img src="https://i.imgur.com/bn5syr6.png" width="300"/>           |
+
 ## 📂 Project Structure
 ```bash
 museum_classification/
@@ -68,14 +74,12 @@ If you have any questions or suggestions about this project, feel free to reach 
 
 ---
 
-### 中文版本
-
 # 博物館展覽物件分類項目
 
 ## 📖 項目概述
 本項目是一個**博物館物件分類**解決方案，使用 **YOLO 物件檢測模型** 和 **消反光模型** 來識別博物館和展覽館中的文物和藝術品。該項目旨在通過消除圖像中的反光來提高物件識別的準確性，並對處理後的圖像進行分類。
 
-競賽網站: https://aigo.org.tw/zh-tw/competitions/details/507
+競賽網站: [AIGO Competition](https://aigo.org.tw/zh-tw/competitions/details/507)
 
 ## ✨ 主要特點
 - **YOLO 物件檢測**：從拍攝的圖像中識別並分類博物館物件，支持多種類別。
@@ -107,6 +111,16 @@ If you have any questions or suggestions about this project, feel free to reach 
 2. **處理相片**：按下 "Process Photo" 按鈕來執行 YOLO 檢測和消反光處理。處理完成後，應用程式會顯示最佳分類結果。
 3. **保存圖像**：消除反光後的圖像將自動保存到您的相冊。
 
+## 📱 App 截圖
+
+| 初始畫面                                                         | 開啟相機後                                                       |
+|------------------------------------------------------------------|--------------------------------------------------------------------|
+| <img src="https://i.imgur.com/CjIMf58.png" width="300"/>         | <img src="https://i.imgur.com/OXhtYho.png" width="300"/>           |
+
+| 拍攝完成                                                         | 處理相片後                                                       |
+|------------------------------------------------------------------|--------------------------------------------------------------------|
+| <img src="https://i.imgur.com/fQN3SoY.png" width="300"/>         | <img src="https://i.imgur.com/bn5syr6.png" width="300"/>           |
+
 ## 📂 專案結構
 ```bash
 museum_classification/
@@ -132,5 +146,4 @@ museum_classification/
 5. **開啟 Pull Request**。
 
 ## 📧 聯絡方式
-如果您對本項目有任何疑問或建議，請隨時聯繫我們：[vicky46586038@gmail.com](mailto:vicky46586038@gmail.com)。
-
+如果您對本項目有任何疑問或建議，請隨時聯繫我們：[vicky46586038@gmail.com](mailto:vicky46586038@gmail.com).
