@@ -5,6 +5,14 @@ This project is a **Museum Object Classification** solution that uses **YOLO (Yo
 
 Competition Website: [AIGO Competition](https://aigo.org.tw/zh-tw/competitions/details/507)
 
+## 📷 Demo
+
+Watch the demo video below:
+
+[![Watch the video](https://img.youtube.com/vi/5taT1dF4L1Y/0.jpg)](https://www.youtube.com/watch?v=5taT1dF4L1Y)
+
+Click the image above to watch the demo.
+
 ## ✨ Key Features
 - **YOLO Object Detection**: Identifies and classifies museum objects from captured images, supporting multiple categories.
 - **Anti-Reflection Model**: Improves image quality by reducing reflections, enhancing object recognition accuracy.
