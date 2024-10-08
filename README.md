@@ -11,7 +11,7 @@ Watch the demo video below:
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=5taT1dF4L1Y">
-    <img src="https://img.youtube.com/vi/5taT1dF4L1Y/0.jpg" alt="Demo Video" width="600" height="400"/>
+    <img src="https://i.imgur.com/2z3Jgm8.png" alt="Demo Video" width="251.8" height="532.6"/>
   </a>
 </p>
 
