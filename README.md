@@ -9,7 +9,7 @@ Competition Website: [AIGO Competition](https://aigo.org.tw/zh-tw/competitions/d
 
 Watch the demo video below:
 
-  <a href="https://www.youtube.com/watch?v=5taT1dF4L1Y">
+  <a href="https://youtu.be/dDO6zq5NAl0">
     <img src="https://i.imgur.com/2z3Jgm8.png" alt="Demo Video" width="251.8" height="532.6"/>
   </a>
 
