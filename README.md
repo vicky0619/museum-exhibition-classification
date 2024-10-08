@@ -92,6 +92,16 @@ If you have any questions or suggestions about this project, feel free to reach 
 
 競賽網站: [AIGO Competition](https://aigo.org.tw/zh-tw/competitions/details/507)
 
+## 📷 Demo
+
+點擊以下圖片觀看 Demo 影片：
+
+  <a href="https://www.youtube.com/watch?v=5taT1dF4L1Y">
+    <img src="https://i.imgur.com/2z3Jgm8.png" alt="Demo Video" width="251.8" height="532.6"/>
+  </a>
+
+
+
 ## ✨ 主要特點
 - **YOLO 物件檢測**：從拍攝的圖像中識別並分類博物館物件，支持多種類別。
 - **消反光模型**：通過降低反光來改善圖像質量，提高物件識別的準確性。
