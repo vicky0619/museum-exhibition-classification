@@ -5,6 +5,17 @@ This project is a **Museum Object Classification** solution that uses **YOLO (Yo
 
 Competition Website: [AIGO Competition](https://aigo.org.tw/zh-tw/competitions/details/507)
 
+## 📷 Demo
+
+Watch the demo video below:
+
+  <a href="https://youtu.be/dDO6zq5NAl0">
+    <img src="https://i.imgur.com/2z3Jgm8.png" alt="Demo Video" width="251.8" height="532.6"/>
+  </a>
+
+
+Click the image above to watch the demo.
+
 ## ✨ Key Features
 - **YOLO Object Detection**: Identifies and classifies museum objects from captured images, supporting multiple categories.
 - **Anti-Reflection Model**: Improves image quality by reducing reflections, enhancing object recognition accuracy.
@@ -80,6 +91,16 @@ If you have any questions or suggestions about this project, feel free to reach 
 本項目是一個**博物館物件分類**解決方案，使用 **YOLO 物件檢測模型** 和 **消反光模型** 來識別博物館和展覽館中的文物和藝術品。該項目旨在通過消除圖像中的反光來提高物件識別的準確性，並對處理後的圖像進行分類。
 
 競賽網站: [AIGO Competition](https://aigo.org.tw/zh-tw/competitions/details/507)
+
+## 📷 Demo
+
+點擊以下圖片觀看 Demo 影片：
+
+  <a href="https://www.youtube.com/watch?v=5taT1dF4L1Y">
+    <img src="https://i.imgur.com/2z3Jgm8.png" alt="Demo Video" width="251.8" height="532.6"/>
+  </a>
+
+
 
 ## ✨ 主要特點
 - **YOLO 物件檢測**：從拍攝的圖像中識別並分類博物館物件，支持多種類別。
