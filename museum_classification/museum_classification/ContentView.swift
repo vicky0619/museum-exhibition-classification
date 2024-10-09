@@ -50,25 +50,41 @@ struct ContentView: View {
                     ScrollView {
                         VStack {
                             ForEach(viewModel.detectedArtifacts, id: \.self) { artifactName in
-                                Button(action: {
-                                    selectedArtifact = Artifact(name: artifactName)
-                                }) {
-                                    Text(artifactName)
-                                        .font(.headline)
-                                        .padding()
-                                        .foregroundColor(Color(hex: "#20484b"))
-                                        .background(Color(hex: "#91bec5"))
-                                        .cornerRadius(10)
-                                        .shadow(radius: 5)
+                                VStack {
+                                    Button(action: {
+                                        selectedArtifact = Artifact(name: artifactName)
+                                    }) {
+                                        Text(artifactName)
+                                            .font(.headline)
+                                            .padding()
+                                            .foregroundColor(Color(hex: "#20484b"))
+                                            .background(Color(hex: "#91bec5"))
+                                            .cornerRadius(10)
+                                            .shadow(radius: 5)
+                                    }
+                                    
+                                    // Show failure message if the artifact is "未知類別"
+                                    if artifactName == "未知類別" {
+                                        Text("""
+                                        辨識失敗:
+                                        1.您辨識的東西不在辨識範圍
+                                        2.您可能需要調整位置重拍
+                                        """)
+                                        .font(.body)
+                                        .foregroundColor(.red)
+                                        .multilineTextAlignment(.center)
+                                        .padding(.top, 5)
+                                    }
                                 }
                                 .padding(.vertical, 5)
                             }
                         }
                         .padding()
                     }
-                    .frame(maxHeight: 250) // You can adjust the height here as needed
+                    .frame(maxHeight: 250) // Adjust the height as needed
                     .padding()
                 }
+
 
                 
                 // Action Buttons
@@ -347,7 +363,7 @@ struct ArtifactDetailView: View {
 
             """
         default:
-            return "無相關資料"
+            return "辨識失敗:\n1.您辨識的東西不在辨識範圍\n2.您可能需要調整位置重拍"
         }
     }
     // Function to get image name based on artifact

@@ -10,6 +10,7 @@ class CameraViewModel: ObservableObject {
     @Published var errorMessage: String?
 
     private var yoloInterpreter: Interpreter?
+    private var reflectyoloInterpreter: Interpreter?
     private var antiReflectionInterpreter: Interpreter?
     private let captureSession = AVCaptureSession()
     
@@ -31,7 +32,7 @@ class CameraViewModel: ObservableObject {
     
     // 加載 YOLO 和消反光模型
     func loadModels() {
-        // 加載 YOLO 模型
+        // 加載noreflect YOLO 模型
         if let yoloPath = Bundle.main.path(forResource: "no_reflex2000_float32", ofType: "tflite") {
             do {
                 yoloInterpreter = try Interpreter(modelPath: yoloPath)
@@ -50,7 +51,25 @@ class CameraViewModel: ObservableObject {
         } else {
             errorMessage = "無法找到 YOLO 模型文件"
         }
-        
+        // 加載reflect YOLO 模型
+        if let reflectyoloPath = Bundle.main.path(forResource: "reflex2000_float32", ofType: "tflite") {
+            do {
+                reflectyoloInterpreter = try Interpreter(modelPath: reflectyoloPath)
+                try reflectyoloInterpreter?.allocateTensors()
+                print("reflect YOLO 模型加載成功")
+                // 確認 YOLO 模型輸入輸出尺寸
+                if let reflectyoloInterpreter = reflectyoloInterpreter {
+                    let inputShape = try reflectyoloInterpreter.input(at: 0).shape.dimensions
+                    let outputShape = try reflectyoloInterpreter.output(at: 0).shape.dimensions
+                    print("reflect YOLO 模型輸入尺寸：\(inputShape)")
+                    print("reflect YOLO 模型輸出尺寸：\(outputShape)")
+                }
+            } catch {
+                errorMessage = "reflect YOLO 模型加載失敗：\(error.localizedDescription)"
+            }
+        } else {
+            errorMessage = "無法找到 reflect YOLO 模型文件"
+        }
         // 加載消反光模型
         if let antiReflectionPath = Bundle.main.path(forResource: "aigo_model_v1", ofType: "tflite") {
             do {
@@ -213,7 +232,7 @@ class CameraViewModel: ObservableObject {
 
 
     
-    // 處理消反光 -> YOLO 模型推理
+    // 處理消反光 -> reflect YOLO 模型推理
     func processAntiReflectionYolo() -> [(String, Float)]? {
         // 初始化 outputData
         outputData = []
@@ -227,8 +246,8 @@ class CameraViewModel: ObservableObject {
             return nil
         }
         
-        guard let yoloInterpreter = yoloInterpreter else {
-            errorMessage = "YOLO 解釋器未初始化"
+        guard let reflectyoloInterpreter = reflectyoloInterpreter else {
+            errorMessage = "reflect YOLO 解釋器未初始化"
             return nil
         }
         
@@ -261,27 +280,27 @@ class CameraViewModel: ObservableObject {
             }
             print("消反光後的圖片預處理完成，數據長度：", processedTensorData.count)
             
-            // 使用 YOLO 進行推理
-            try yoloInterpreter.copy(processedTensorData, toInputAt: 0)
-            try yoloInterpreter.invoke()
-            print("YOLO 推理完成")
+            // 使用 reflect YOLO 進行推理
+            try reflectyoloInterpreter.copy(processedTensorData, toInputAt: 0)
+            try reflectyoloInterpreter.invoke()
+            print("reflect YOLO 推理完成")
             
-            // 獲取 YOLO 模型的標籤
-            let output2 = parseYoloOutput(from: yoloInterpreter)
+            // 獲取 reflect YOLO 模型的標籤
+            let output2 = parseYoloOutput(from: reflectyoloInterpreter)
             
             if !output2.isEmpty {
                 // 打印所有結果
                 output2.forEach { result in
-                    print("消反光後 YOLO 模型輸出：\(result.0)，機率：\(result.1)")
+                    print("消反光後 reflect YOLO 模型輸出：\(result.0)，機率：\(result.1)")
                 }
                 return output2
             } else {
-                print("YOLO 模型無結果")
+                print("reflect YOLO 模型無結果")
                 return nil
             }
             
         } catch {
-            errorMessage = "消反光 YOLO 推理失敗：\(error.localizedDescription)"
+            errorMessage = "消反光 reflect YOLO 推理失敗：\(error.localizedDescription)"
             return nil
         }
     }
