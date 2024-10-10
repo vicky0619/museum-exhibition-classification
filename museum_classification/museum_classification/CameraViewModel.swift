@@ -481,12 +481,15 @@ class CameraViewModel: ObservableObject {
         }
         
         // Set the threshold
-        let threshold: Float = 0.7
+        var threshold: Float = 0.7
         var detectedLabels: [(String, Float)] = []
         
         // Collect all labels that exceed the threshold
         for (index, probability) in maxProbabilities.enumerated() where probability > threshold {
             let yoloLabelIndex = index - 4
+            // For obj4, use a higher threshold
+            threshold = (yoloChineseLabels[yoloLabelIndex] == "青花花鳥八角盒") ? 0.85 : 0.7
+                    
             if yoloLabelIndex >= 0 && yoloLabelIndex < yoloChineseLabels.count {
                 let detectedLabel = yoloChineseLabels[yoloLabelIndex]
                 print("檢測到的類別：\(detectedLabel)，機率：\(probability)")
