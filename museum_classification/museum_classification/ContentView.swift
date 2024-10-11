@@ -191,20 +191,7 @@ struct ArtifactDetailView: View {
         
         var body: some View {
             VStack {
-                // Dismiss button at the top-right corner
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        // Dismiss the sheet
-                        dismiss()
-                    }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.gray)
-                            .font(.title)
-                            .padding()
-                    }
-                }
-                
+                                
                 // Artifact details card
                 ScrollView {
                     VStack(alignment: .leading, spacing: 16) {
